@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"bizzy_track/views"
+	"fmt"
 	"net/http"
 )
 
@@ -19,6 +20,14 @@ type Users struct {
 	NewView *views.View
 }
 
+//New renders form where a user can create a new User account
+// GET /signup
 func (u *Users) New(w http.ResponseWriter, r *http.Request) {
 	u.NewView.Render(w, nil)
+}
+
+// Create processes the signup form when a user submits it. Ultimately creates a new user account
+// POST /signup
+func (u *Users) Create(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintln(w, "This is a temporary response")
 }
